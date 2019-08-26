@@ -1,0 +1,11 @@
+<table>
+  <?php foreach($posts[$page - 1] as $post): ?>
+    <tr>
+      <td>Name: <i><a href="/posts/<?= $post['slug'] ?>"><?= $post['name'] ?></a><i></td>
+    </tr>
+  <?php endforeach ?>
+</table>
+
+<a href="?page=<?= $page < 2 ? 1 : $page - 1 ?>">prev</a>
+<a href="?page=<?= $page < $lengthOfPostsRepo ? $page + 1 : $page = 1 ?>">next</a>
+<div><?= $page?></div>
